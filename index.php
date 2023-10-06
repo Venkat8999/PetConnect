@@ -17,7 +17,7 @@ $query = mysqli_query($con, "INSERT INTO test (name) VALUES ('Venkat')");
 </head>
 <body>
     <main>
-        <h1>Welcome to My Website</h1>
+        <h1>Welcome to PetConnect</h1>
     </main>
 </body>
 </html>
