@@ -40,13 +40,13 @@ if(isset($_POST['register_button'])){
     $em = strip_tags($_POST['reg_email']); // remove html tags
     $em = str_replace(' ', '', $em ); // remove spaces
     $em = ucfirst(strtolower($em));
-    $_SESSION['reg_email'] = $fname;
+    $_SESSION['reg_email'] = $em;
 
         //email2
         $em2 = strip_tags($_POST['reg_confirm_email']); // remove html tags
         $em2 = str_replace(' ', '', $em2); // remove spaces
         $em2 = ucfirst(strtolower($em2));
-        $_SESSION['reg_confirm_email'] = $fname;
+        $_SESSION['reg_confirm_email'] = $em2;
 
         $password = strip_tags($_POST['reg_password']);
         $password2 = strip_tags($_POST['reg_confirm_password']);
@@ -122,9 +122,13 @@ if(isset($_POST['register_button'])){
             else if ($rand == 2)
                 $profile_pic = "assests\profile_pics\default\head_amethyst.png";
         
-            $query = mysqli_query($con, "INSERT INTO users VALUES ('', '$fname', '$lname', '$username', '$em', '$password', '$date', '$profile_pic', '0', '0', 'no', '')");
+                $query = mysqli_query($con, "INSERT INTO users (first_name, last_name, username, email, password, signup_date, profile_pic, num_posts, num_likes, user_closed, friend_array) VALUES ('$fname', '$lname', '$username', '$em', '$password', '$date', '$profile_pic', '0', '0', 'no', '')");
         
             array_push($error_array, "<span style='color: #14C800;'> you're all set! Go ahead and login</span><br>");
+            unset($_SESSION['reg_firstname']);
+            unset($_SESSION['reg_lastname']);
+            unset($_SESSION['reg_email']);
+            unset($_SESSION['reg_confirm_email']);
         }
         
     }
@@ -161,7 +165,7 @@ if(isset($_POST['register_button'])){
 
         <input type="submit" name= "register_button" value="Submit">
         <br>
-        <?php if(in_array("<span style='color: #14C800;'> you're all set! Goahead and login</span><br>", $error_array)) echo "<span style='color: #14C800;'> you're all set! Goahead and login</span><br>"; ?>
+        <?php if(in_array("<span style='color: #14C800;'> you're all set! Go ahead and login</span><br>", $error_array)) echo "<span style='color: #14C800;'> you're all set! Goahead and login</span><br>"; ?>
 
     </form>
 </body>
