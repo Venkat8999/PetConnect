@@ -1,0 +1,197 @@
+.top_bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px; /* Adjust as necessary to fit content */
+    background-color: #a38351;
+    border-bottom: 0.25em solid #a38351;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    margin-top: 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 20px; /* Increased font size for icons */
+    padding: 0 15px; /* Horizontal padding */
+    display: flex; /* Use flexbox for vertical centering */
+    align-items: center; /* Align items vertically */
+    height: 100%; /* Match the height of top_bar */
+}
+
+nav a:hover {
+    padding-bottom: 5px; /* Prevent shifting of elements */
+    background-color: #fdcb6e;
+}
+.logo h1 {
+  font-family: 'Arial', sans-serif; /* Choose a font-family */
+  font-size: 24px; /* Adjust the size as needed */
+  font-weight: bold; /* Make it bold */
+  color: black; /* Set the color */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  text-decoration: none; /* No underline */
+}
+
+/* If you want to add more styles to the link */
+.logo a {
+  text-decoration: none; /* Removes underline from the link */
+  color: inherit; /* Inherits color from parent */
+}
+
+
+.profile_pic {
+    width: 180px; /* Adjust width as needed */
+    height: 170px; /* Adjust height as needed */
+    object-fit: cover; /* This ensures the image covers the area, cropping if necessary */
+    border-radius: 50%; /* Gives the image a circular shape */
+}
+.wrapper {
+    margin: 0 auto;
+    top: 80px;
+    position: relative;
+    padding: 0 10px;
+    width: 75%;
+    min-width: 950;
+}
+.column  {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #D3D3D3;
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px #D3D3D3;
+    z-index: -1;
+}
+.user_details {
+    Width: 300px;
+     Float: left;
+     Margin-bottom: 20px;
+     color: #a38351;
+}
+.user_details_left_right {
+    width: 125px;
+    display: inline-block;
+    position:absolute;
+
+}
+.user_details_left_right a {
+  color: black;
+
+}
+.main_column{
+    float: right;
+    width: 70%;
+    z-index: -1;
+    min-height: 160px;
+}
+.post_form {
+    width:100%;
+
+}
+.post_form textarea{
+    width: 80%;
+    height: 60px;
+    border-radius: 5px;
+    margin-right: 5px;
+    border: 1px solid black;
+    font-size: 12px;
+}
+.post_form input[type="submit"] {
+    width: 10%;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    background-color: #a38351;
+    color: black;
+    text-shadow: black 0.5px 0px;
+    font-size: 90%;
+    position: absolute;
+    outline: 0;
+    margin: 0;
+}
+.post_form input [type="submit"]:active {
+    padding: 5px 4px 4px 5px;
+}
+.status_post {
+    width: 96%;
+    font-size: 15px;
+    padding: 8px 5px;
+    line-height: 50px;
+}
+
+.post_profile_pic {
+    float: left;
+    margin-right: 7px;
+}
+
+.post_profile_pic img {
+    border-radius: 5px;
+}
+/* Add this to ensure padding and borders are included in the total width and height */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Adjust the comment form to prevent horizontal overflow */
+  #comment_form {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Ensures form doesn't exceed the width of its container */
+  }
+  
+  #comment_form textarea {
+    width: calc(100% - 80px); /* Adjust the width calculation to prevent overflow, 80px is an example button width including margins */
+    margin-right: 10px;
+  }
+  
+  #comment_form input[type="submit"] {
+    padding: 10px 20px; /* Adjust the padding as needed */
+    color: black;
+    background-color: #a38351;
+    border-radius: 10px;
+    text-shadow: #73b6e2 0.5px 0px; 
+
+  }
+  
+  /* Comment section styling */
+  .comment_section {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* This creates space between items */
+  }
+  
+  .comment_profile_pic img {
+    width: 30px; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
+    margin-right: 10px; /* Space between profile pic and name */
+  }
+  
+  .comment_details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns items to the start of the flex container */
+  }
+  
+  .time {
+    align-self: flex-end; /* Aligns the time to the end of the flex container */
+    margin-top: auto; /* Pushes the time to the bottom if there is space */
+  }
+  
+  /* Ensure iframe fits the container without causing overflow */
+  #comment_iframe {
+    width: 100%; /* Full width */
+    border: none; /* Remove border */
+    overflow: hidden; /* Hide overflow */
+  }
+  
+  .newsfeedPostOptions {
+    padding: 0px;
+    text-decoration: none;
+    color: #fdcb6e;
+    border: none;
+  }
